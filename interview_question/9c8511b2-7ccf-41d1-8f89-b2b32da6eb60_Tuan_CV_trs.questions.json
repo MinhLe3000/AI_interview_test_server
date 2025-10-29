@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "question": "Good morning, Le Minh Tuan. Thank you for coming in today. Could you please start by introducing yourself and telling us a bit about your academic background and current career aspirations?",
+    "category": "opening",
+    "purpose": "Allow the candidate to introduce themselves, gauge communication skills, and understand their overall profile and goals."
+  },
+  {
+    "id": 2,
+    "question": "Every individual has unique strengths and areas for development. What would you consider your top two strengths that are relevant to a Data Analyst role, and what is one area you are actively working to improve?",
+    "category": "opening",
+    "purpose": "Assess self-awareness, identify key qualities relevant to the role, and understand their commitment to personal growth."
+  },
+  {
+    "id": 3,
+    "question": "You're a second-year student with a strong background already. What specifically attracted you to apply for this Data Analyst Intern position, and what do you hope to gain from this experience?",
+    "category": "opening",
+    "purpose": "Understand the candidate's motivation for the role and company, and how they align with the internship's learning opportunities."
+  },
+  {
+    "id": 4,
+    "question": "Your CV mentions 'comfortable working in team environments' and 'commitment to continuous learning in collaborative environments'. Can you describe a situation from your academic or work experience where you collaborated with a team on a data-related project? What was your specific role, and what was the biggest challenge the team faced?",
+    "category": "behavioral",
+    "purpose": "Assess teamwork, collaboration skills, problem-solving within a team context, and ability to reflect on challenges.",
+    "focus": "Teamwork/Collaboration"
+  },
+  {
+    "id": 5,
+    "question": "Tell me about a time when you encountered an unexpected problem or a setback during a project, either academic or your FSS experience. How did you approach solving it, and what was the outcome?",
+    "category": "behavioral",
+    "purpose": "Evaluate problem-solving abilities, resilience, adaptability, and learning from mistakes.",
+    "focus": "Problem Solving"
+  },
+  {
+    "id": 6,
+    "question": "You've worked with SQL in both your FSS experience and the 'Pizza Sales Data Visualization' project. For an intern-level understanding, can you explain the difference between a 'LEFT JOIN' and an 'INNER JOIN' in SQL, and provide a simple scenario where you would use each?",
+    "category": "technical",
+    "purpose": "Assess fundamental SQL knowledge and ability to apply it to practical scenarios, appropriate for an intern.",
+    "focus": "SQL"
+  },
+  {
+    "id": 7,
+    "question": "In your FSS Data Engineering experience, you 'developed knowledge of ETL workflows' and were 'creating data pipelines'. For a Data Analyst Intern, how would you briefly describe what ETL stands for, and why is understanding ETL important for a Data Analyst, even if they aren't directly building complex pipelines?",
+    "category": "technical",
+    "purpose": "Evaluate understanding of core data warehousing concepts relevant to data analysis and leverage past experience.",
+    "focus": "ETL Concepts"
+  },
+  {
+    "id": 8,
+    "question": "You listed Power BI and Google Sheets under 'Data Tools' and mentioned 'Pizza Sales Data Visualization'. Imagine you have a dataset about customer feedback for a travel website. How would you use Power BI (or a similar tool) to create a dashboard that helps stakeholders quickly understand key trends and areas for improvement?",
+    "category": "technical",
+    "purpose": "Assess practical data visualization skills and ability to translate data into actionable insights for non-technical audiences.",
+    "focus": "Data Visualization/Dashboarding"
+  },
+  {
+    "id": 9,
+    "question": "Let's discuss your 'Travel Destination Research Tracker' project. Could you walk me through the process you followed from web scraping to organizing data in Airtable? What was the most insightful piece of information you gathered, and what challenges did you face when cleaning or organizing the scraped data?",
+    "category": "cv_based",
+    "purpose": "Gain deeper insight into a specific project, understanding the technical execution, challenges, and learning outcomes.",
+    "focus": "Project Deep Dive: Web Scraping & Data Organization"
+  },
+  {
+    "id": 10,
+    "question": "In your FSS role, you supported 'data extraction and reporting' and gained exposure to 'financial and banking operations'. Can you give an example of a specific report or data extraction task you assisted with? What kind of data was involved, and what was the ultimate goal or insight that report aimed to provide?",
+    "category": "cv_based",
+    "purpose": "Understand practical application of skills in a professional setting, linking experience to tangible outputs and business context.",
+    "focus": "Work Experience Deep Dive: Data Extraction & Reporting"
+  },
+  {
+    "id": 11,
+    "question": "Imagine our company wants to launch a new travel package targeting adventure travelers. We have data from various sources: social media mentions, past booking history, and competitor offerings. As a Data Analyst Intern, how would you approach combining and analyzing this diverse data to recommend the best marketing channels and features for this new package?",
+    "category": "creative",
+    "purpose": "Test problem-solving, structured thinking, and ability to apply analytical approaches to a hypothetical business scenario relevant to their stated interests.",
+    "focus": "Problem Solving / Analytical Thinking"
+  }
+]

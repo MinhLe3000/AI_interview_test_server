@@ -1,0 +1,13 @@
+google-generativeai
+pillow
+pytesseract
+pypdf
+python-dotenv
+requests
+chromadb
+sentence-transformers
+numpy
+pathlib2
+flask
+werkzeug
+pdf2image

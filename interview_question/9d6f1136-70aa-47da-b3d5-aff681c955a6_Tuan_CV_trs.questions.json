@@ -1,0 +1,71 @@
+[
+  {
+    "id": 1,
+    "question": "Could you please start by introducing yourself and telling us a bit about your academic background and aspirations?",
+    "category": "opening",
+    "purpose": "Allow the candidate to introduce themselves and set the context for the interview."
+  },
+  {
+    "id": 2,
+    "question": "Every individual has unique strengths and areas for development. Could you share what you consider your top two strengths and one area you are actively working on improving?",
+    "category": "opening",
+    "purpose": "Assess self-awareness, highlight key attributes relevant to the role, and identify growth mindset."
+  },
+  {
+    "id": 3,
+    "question": "You're a second-year student with a background in IT. What specifically interests you about the Data Analyst role, and why are you applying for an internship with our company?",
+    "category": "opening",
+    "purpose": "Understand the candidate's motivation, career goals, and their understanding of the Data Analyst role, as well as their interest in the company."
+  },
+  {
+    "id": 4,
+    "question": "Your CV mentions you are comfortable working in team environments. Can you describe a specific situation where you collaborated with a team to overcome a challenge or achieve a shared goal? What was your role, and what did you learn from that experience?",
+    "category": "behavioral",
+    "purpose": "Assess teamwork, collaboration skills, ability to contribute to a group effort, and reflection on experiences."
+  },
+  {
+    "id": 5,
+    "question": "You list self-learning and problem-solving as key strengths. Tell me about a time you faced a complex problem or had to quickly learn a new tool/technology for a project or task. How did you approach it, and what was the outcome?",
+    "category": "behavioral",
+    "purpose": "Evaluate problem-solving methodology, adaptability, proactiveness in learning, and resilience, especially relevant for an intern role where continuous learning is key."
+  },
+  {
+    "id": 6,
+    "question": "You've worked with SQL in your FSS experience and projects. For an intern-level Data Analyst, what are the primary differences between `WHERE` and `HAVING` clauses in SQL, and can you provide a simple example of when you would use each?",
+    "category": "technical",
+    "purpose": "Assess foundational SQL knowledge, understanding of common clauses, and ability to apply them correctly.",
+    "focus": "SQL (WHERE vs HAVING)"
+  },
+  {
+    "id": 7,
+    "question": "Your FSS experience and projects mention data cleaning and transformation. Could you describe a common data quality issue you've encountered (e.g., missing values, inconsistent formats, duplicate entries) and explain how you would typically identify and resolve it using either SQL or Python?",
+    "category": "technical",
+    "purpose": "Evaluate practical understanding of data cleaning challenges, common techniques, and ability to apply tools like SQL or Python for data preparation.",
+    "focus": "Data Cleaning & Transformation (SQL/Python)"
+  },
+  {
+    "id": 8,
+    "question": "You've used Power BI, Google Sheets, and Excel for visualization in your projects. At an intern level, when presenting data to non-technical stakeholders, what do you consider the most crucial aspect to ensure your visualizations are clear, understandable, and actionable?",
+    "category": "technical",
+    "purpose": "Assess understanding of data visualization principles, communication skills, and focus on delivering insights to diverse audiences.",
+    "focus": "Data Visualization & Communication"
+  },
+  {
+    "id": 9,
+    "question": "Your 'Travel Destination Research Tracker' project involved web scraping with Python, cleaning data in Excel, and organizing it in Airtable. Could you walk us through the most challenging part of this project from a data perspective and how you approached resolving it?",
+    "category": "cv_based",
+    "purpose": "Gain deeper insight into a specific project, assess problem-solving within a practical context, and understand the application of Python, Excel, and Airtable."
+  },
+  {
+    "id": 10,
+    "question": "In your FSS Data Engineering experience, you mentioned creating data pipelines to collect, clean, and transform raw data from various sources using SQL Oracle. Can you give a specific example of a data transformation you performed and explain why that particular transformation was necessary for the data's intended use?",
+    "category": "cv_based",
+    "purpose": "Understand the candidate's practical experience with data transformation, their understanding of data lineage, and the purpose behind data processing steps."
+  },
+  {
+    "id": 11,
+    "question": "Imagine a local tourism board wants to understand the most popular times of year for visitors to their city, but they only have unstructured text data from social media comments and online reviews. As a Data Analyst Intern, how would you approach gathering and analyzing this information to provide a clear recommendation?",
+    "category": "creative",
+    "purpose": "Test problem-solving, critical thinking, ability to structure an analytical approach, and relate to the candidate's expressed interest in the travel/tourism industry, while considering unstructured data."
+  }
+]

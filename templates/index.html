@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Trang chủ - Interview AI System{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-primary">
+                <i class="fas fa-robot me-3"></i>Interview AI System
+            </h1>
+            <p class="lead text-muted">
+                Hệ thống phỏng vấn thông minh sử dụng AI để tạo câu hỏi, thực hiện phỏng vấn và đánh giá ứng viên
+            </p>
+        </div>
+
+        <!-- Features -->
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-primary text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-upload fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Tạo câu hỏi</h5>
+                        <p class="card-text text-muted">
+                            Upload CV và mô tả công việc để AI tự động tạo ra bộ câu hỏi phỏng vấn phù hợp
+                        </p>
+                        <a href="{{ url_for('upload_cv') }}" class="btn btn-outline-primary">
+                            <i class="fas fa-plus me-1"></i>Bắt đầu
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-success text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-comments fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Phỏng vấn</h5>
+                        <p class="card-text text-muted">
+                            Thực hiện phỏng vấn tương tác với giao diện thân thiện và dễ sử dụng
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon bg-info text-white rounded-circle mx-auto mb-3">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <h5 class="card-title">Đánh giá</h5>
+                        <p class="card-text text-muted">
+                            AI tự động chấm điểm và đưa ra đánh giá chi tiết về ứng viên
+                        </p>
+                        <a href="{{ url_for('results') }}" class="btn btn-outline-info">
+                            <i class="fas fa-eye me-1"></i>Xem kết quả
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="card border-0 shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-rocket me-2"></i>Bắt đầu nhanh
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-primary">Bước 1: Upload CV</h6>
+                        <p class="text-muted small">
+                            Chọn file CV (PDF, PNG, JPG) và nhập thông tin vị trí ứng tuyển
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-primary">Bước 2: AI tạo câu hỏi</h6>
+                        <p class="text-muted small">
+                            Hệ thống sẽ phân tích CV và tạo bộ câu hỏi phù hợp với vị trí
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-primary">Bước 3: Thực hiện phỏng vấn</h6>
+                        <p class="text-muted small">
+                            Ứng viên trả lời câu hỏi qua giao diện web thân thiện
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-primary">Bước 4: Xem kết quả</h6>
+                        <p class="text-muted small">
+                            AI đánh giá và đưa ra điểm số, nhận xét chi tiết
+                        </p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('upload_cv') }}" class="btn btn-primary btn-lg">
+                        <i class="fas fa-play me-2"></i>Bắt đầu ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

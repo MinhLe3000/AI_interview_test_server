@@ -1,0 +1,90 @@
+{
+    "candidate_name": "TĐM",
+    "id": "11236157",
+    "interview_date": "2025-10-14 08:19:27",
+    "responses": [
+        {
+            "category": "opening",
+            "id": 1,
+            "purpose": "Allow the candidate to introduce themselves and set the stage for the interview.",
+            "question": "Good morning, Le Minh Tuan. Thank you for coming in today. Could you please start by introducing yourself and telling us a bit about your academic background and what brings you here today?",
+            "response": "Good morning, and thank you for having me.\nMy name is Le Minh Tuan, I recently graduated in IT from National Economics University, and I’m here today because I’m excited about the opportunity to apply my skills and grow with your company."
+        },
+        {
+            "category": "opening",
+            "id": 2,
+            "purpose": "Assess self-awareness, alignment with role requirements, and growth mindset.",
+            "question": "Every individual has unique strengths and areas they are working to improve. Can you share with us what you consider to be your greatest strengths and perhaps an area you're actively trying to develop, especially in the context of a Data Analyst role?",
+            "response": "One of my greatest strengths is my attention to detail and strong analytical thinking — I enjoy turning data into actionable insights.\nI'm currently working on improving my data storytelling and visualization skills to communicate findings more clearly to non-technical stakeholders."
+        },
+        {
+            "category": "opening",
+            "id": 3,
+            "purpose": "Understand motivation, alignment with company/role, and career aspirations.",
+            "question": "You're a second-year IT student with an impressive background. What specifically attracted you to the Data Analyst Intern position at our company, and what do you hope to gain from this experience?",
+            "response": "As a second-year IT student, I’m excited about how data can drive smarter decisions.\nWhat attracted me to this internship is your company’s focus on data-driven solutions and real-world impact.\nI hope to gain hands-on experience with real datasets and improve my skills in tools like SQL, Python, and data visualization."
+        },
+        {
+            "category": "behavioral",
+            "id": 4,
+            "purpose": "Evaluate teamwork, collaboration, communication, and conflict resolution skills.",
+            "question": "You mentioned comfortable working in team environments. Can you tell us about a time when you collaborated on a project that involved different ideas or approaches? How did you contribute to the team's success, and how did you handle any disagreements?",
+            "response": "In a recent school project, our team had different ideas on how to clean and visualize the data.\nI suggested we combine the best parts of each approach and tested both to compare results.\nBy staying open-minded and focusing on the shared goal, we delivered a strong final presentation that reflected everyone's strengths."
+        },
+        {
+            "category": "behavioral",
+            "id": 5,
+            "purpose": "Assess problem-solving, resilience, self-learning ability, and adaptability.",
+            "question": "As an intern, you'll encounter new challenges and learning curves. Can you describe a situation where you faced a significant challenge or a steep learning curve during your studies or work experience, and how you approached overcoming it?",
+            "response": "When I first learned SQL, I struggled with writing complex queries and joins.\nInstead of getting discouraged, I practiced daily with real datasets and followed online tutorials.\nWithin a few weeks, I was able to complete a mini-project that analyzed sales data and presented clear insights."
+        },
+        {
+            "category": "technical",
+            "focus": "ETL concepts",
+            "id": 6,
+            "purpose": "Evaluate foundational understanding of ETL concepts and data processing, relevant to data analysis.",
+            "question": "Your CV mentions creating data pipelines using SQL Oracle and developing knowledge of ETL workflows. For an intern-level understanding, can you explain the basic steps involved in a typical ETL process and why each step is important for data analysis?",
+            "response": "In a typical ETL process, we first Extract data from sources like databases or APIs.\nNext, we Transform it by cleaning, filtering, or joining tables to make it usable.\nFinally, we Load the processed data into a destination like a data warehouse, where it's ready for analysis — each step ensures the data is accurate, consistent, and useful."
+        },
+        {
+            "category": "technical",
+            "focus": "SQL querying (intermediate)",
+            "id": 7,
+            "purpose": "Assess practical SQL querying skills, including aggregation, filtering by date, and ordering.",
+            "question": "You've listed SQL, MS SQL, and SQL Oracle in your skills. Imagine you have a table of customer orders with columns like `order_id`, `customer_id`, `order_date`, and `total_amount`. How would you write a SQL query to find the top 5 customers who have spent the most money in the last quarter, along with their total spending?",
+            "response": "Sure. To find the top 5 customers who spent the most in the last quarter, I would write a query that:\n\nFilters orders from the last quarter,\n\nGroups them by customer_id,\n\nSums the total_amount,\n\nSorts the result in descending order, and\n\nLimits the output to 5 rows.\n\nFor example, in Oracle SQL, it would look like this:\n\nSELECT customer_id, SUM(total_amount) AS total_spent\nFROM customer_orders\nWHERE order_date >= ADD_MONTHS(TRUNC(SYSDATE, 'Q'), -3)\nGROUP BY customer_id\nORDER BY total_spent DESC\nFETCH FIRST 5 ROWS ONLY;"
+        },
+        {
+            "category": "technical",
+            "focus": "Data Visualization Tools (Power BI/Excel)",
+            "id": 8,
+            "purpose": "Assess understanding of data visualization tools and their appropriate use cases, specific to mentioned skills.",
+            "question": "You've listed Power BI and Excel for data visualization. When would you choose to use Power BI over Excel for a data visualization task, and what are some advantages Power BI offers for a data analyst?",
+            "response": "I would choose Power BI over Excel when dealing with large datasets that require dynamic, interactive dashboards and regular updates.\nPower BI offers advantages like automated data refresh, better data modeling with relationships, and easy sharing of reports across teams, which helps analysts communicate insights more effectively."
+        },
+        {
+            "category": "cv_based",
+            "focus": "Project details (Travel Destination Research Tracker)",
+            "id": 9,
+            "purpose": "Understand practical application of Python and data cleaning, and challenges faced in a self-initiated project.",
+            "question": "In your 'Travel Destination Research Tracker' project, you used Python for web scraping and then organized the data in Airtable. Can you elaborate on the most challenging aspect of that project and how you ensured the data you scraped was clean and consistent for analysis?",
+            "response": "The biggest challenge was handling inconsistent and incomplete data from different websites during web scraping.\nTo ensure clean and consistent data, I implemented data validation and cleaning steps in Python, such as removing duplicates, filling missing values, and standardizing formats before organizing everything in Airtable for easy analysis."
+        },
+        {
+            "category": "cv_based",
+            "focus": "Work experience (FSS)",
+            "id": 10,
+            "purpose": "Probe into specific responsibilities and learnings from professional work experience, connecting to the data analyst role.",
+            "question": "Your work experience at FSS involved supporting data extraction and reporting, and gaining exposure to financial and banking operations. Can you describe a specific instance where you supported data extraction for a report, and what key learning or challenge you took away from that experience?",
+            "response": "At FSS, I supported data extraction for a monthly financial report by writing SQL queries to pull transaction data from multiple databases.\nA key challenge was ensuring data accuracy across different sources, which taught me the importance of cross-checking and validating data before reporting to avoid errors."
+        },
+        {
+            "category": "creative",
+            "focus": "Data quality/missing data handling",
+            "id": 11,
+            "purpose": "Assess problem-solving, critical thinking, and practical data handling skills in a realistic scenario, appropriate for an intern level.",
+            "question": "Imagine you're asked to analyze sales data for a new product launch, but you discover that the data is incomplete and has many missing values. How would you approach this problem as a Data Analyst Intern to still provide valuable insights to your team?",
+            "response": "If the sales data is incomplete with many missing values, I would first assess the extent and pattern of missing data.\nThen, I’d apply techniques like data imputation or focus analysis on reliable subsets, while clearly communicating any limitations to the team.\nThis way, we can still extract useful insights without compromising accuracy."
+        }
+    ]
+}

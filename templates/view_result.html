@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+
+{% block title %}Chi tiết kết quả - Interview AI System{% endblock %}
+
+{% block extra_css %}
+<style>
+    .score-card {
+        transition: transform 0.2s ease;
+    }
+    .score-card:hover {
+        transform: translateY(-2px);
+    }
+    .score-badge {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+    .metric-item {
+        border-left: 4px solid #007bff;
+        padding-left: 1rem;
+    }
+    .strength-item {
+        border-left-color: #28a745;
+    }
+    .weakness-item {
+        border-left-color: #dc3545;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3>
+                <i class="fas fa-chart-bar me-2"></i>Chi tiết kết quả phỏng vấn
+            </h3>
+            <div>
+                <a href="{{ url_for('download_file', filename=filename) }}" class="btn btn-outline-success">
+                    <i class="fas fa-download me-1"></i>Tải xuống
+                </a>
+                <a href="{{ url_for('results') }}" class="btn btn-outline-secondary">
+                    <i class="fas fa-arrow-left me-1"></i>Quay lại
+                </a>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        {% if result.summary %}
+            {% set summary = result.summary %}
+            <div class="card border-0 shadow mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-user me-2"></i>Thông tin ứng viên
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Tên ứng viên:</strong> {{ summary.candidate_name or 'N/A' }}</p>
+                            <p><strong>Ngày phỏng vấn:</strong> {{ summary.interview_date or 'N/A' }}</p>
+                            <p><strong>Số câu hỏi:</strong> {{ summary.questions_scored or 0 }}</p>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <div class="score-badge">
+                                {% set avg_score = summary.average_overall_score or 0 %}
+                                <span class="badge bg-{{ 'success' if avg_score >= 70 else 'warning' if avg_score >= 50 else 'danger' }} fs-5">
+                                    {{ "%.1f"|format(avg_score) }}/100
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overall Feedback -->
+            {% if summary.overall_feedback %}
+                {% set feedback = summary.overall_feedback %}
+                <div class="card border-0 shadow mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-comment-alt me-2"></i>Đánh giá tổng thể
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="score-card card border-0 bg-light p-3">
+                                    <h6 class="text-primary">Điểm tổng thể</h6>
+                                    <div class="score-badge">
+                                        <span class="badge bg-{{ 'success' if feedback.overall_score >= 70 else 'warning' if feedback.overall_score >= 50 else 'danger' }} fs-4">
+                                            {{ feedback.overall_score or 'N/A' }}/100
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="score-card card border-0 bg-light p-3">
+                                    <h6 class="text-success">Khuyến nghị</h6>
+                                    <p class="mb-0 fw-bold text-{{ 'success' if 'khuyến khích' in feedback.hiring_recommendation else 'warning' if 'cân nhắc' in feedback.hiring_recommendation else 'danger' }}">
+                                        {{ feedback.hiring_recommendation or 'N/A' }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <div class="score-card card border-0 bg-light p-3">
+                                    <h6 class="text-info">Trạng thái</h6>
+                                    {% set score = feedback.overall_score or 0 %}
+                                    {% if score >= 70 %}
+                                        <span class="badge bg-success fs-6">Xuất sắc</span>
+                                    {% elif score >= 50 %}
+                                        <span class="badge bg-warning fs-6">Khá</span>
+                                    {% else %}
+                                        <span class="badge bg-danger fs-6">Cần cải thiện</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="metric-item strength-item">
+                                    <h6 class="text-success">
+                                        <i class="fas fa-thumbs-up me-2"></i>Điểm mạnh
+                                    </h6>
+                                    <p class="text-muted">{{ feedback.strengths or 'Không có thông tin' }}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="metric-item weakness-item">
+                                    <h6 class="text-danger">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>Điểm cần cải thiện
+                                    </h6>
+                                    <p class="text-muted">{{ feedback.weaknesses or 'Không có thông tin' }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+
+        <!-- Detailed Scores -->
+        {% if result.details %}
+            <div class="card border-0 shadow">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list-ol me-2"></i>Chi tiết từng câu hỏi
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="questionsAccordion">
+                        {% for qid, details in result.details.items() %}
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="heading{{ qid }}">
+                                    <button class="accordion-button collapsed" type="button" 
+                                            data-bs-toggle="collapse" data-bs-target="#collapse{{ qid }}">
+                                        <div class="d-flex justify-content-between align-items-center w-100 me-3">
+                                            <span>Câu hỏi {{ qid }}</span>
+                                            <span class="badge bg-primary">{{ details.overall_score or 0 }}/100</span>
+                                        </div>
+                                    </button>
+                                </h2>
+                                <div id="collapse{{ qid }}" class="accordion-collapse collapse" 
+                                     data-bs-parent="#questionsAccordion">
+                                    <div class="accordion-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <h6 class="text-primary">Điểm chi tiết:</h6>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Độ chính xác:</strong> {{ details.correctness or 0 }}/10</li>
+                                                    <li><strong>Bao quát:</strong> {{ details.coverage or 0 }}/10</li>
+                                                    <li><strong>Lập luận:</strong> {{ details.reasoning or 0 }}/10</li>
+                                                    <li><strong>Sáng tạo:</strong> {{ details.creativity or 0 }}/10</li>
+                                                    <li><strong>Giao tiếp:</strong> {{ details.communication or 0 }}/10</li>
+                                                    <li><strong>Thái độ:</strong> {{ details.attitude or 0 }}/10</li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <h6 class="text-info">Nhận xét:</h6>
+                                                <p class="text-muted">{{ details.feedback or 'Không có nhận xét' }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

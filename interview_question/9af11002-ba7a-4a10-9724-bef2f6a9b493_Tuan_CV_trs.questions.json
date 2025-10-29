@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "question": "Good morning, Le Minh Tuan. Thank you for coming in today. Could you please start by introducing yourself and telling us a bit about your background and aspirations?",
+    "category": "opening",
+    "purpose": "Allow the candidate to introduce themselves and set the stage for the interview."
+  },
+  {
+    "id": 2,
+    "question": "Thank you, Tuan. Every individual has unique strengths and areas they are actively working to improve. Could you share what you consider your greatest strengths, particularly in a professional context, and one weakness you are currently focusing on developing?",
+    "category": "opening",
+    "purpose": "Assess self-awareness, personal and professional development mindset."
+  },
+  {
+    "id": 3,
+    "question": "You're a second-year IT student with a strong profile. What specifically attracted you to this Data Analyst intern position, and what do you hope to gain from this experience?",
+    "category": "opening",
+    "purpose": "Understand the candidate's motivation for the role and their career goals, and assess fit with the internship opportunity."
+  },
+  {
+    "id": 4,
+    "question": "Your CV mentions you're comfortable working in team environments and collaborating. Can you describe a specific time when you had to work as part of a team to achieve a goal, and perhaps faced a disagreement or challenge within that team? How did you contribute to resolving it?",
+    "category": "behavioral",
+    "purpose": "Evaluate teamwork, collaboration, conflict resolution, and contribution skills."
+  },
+  {
+    "id": 5,
+    "question": "You highlight 'self-learning' and 'eager to learn' as strengths. Could you share an example of a new tool, technology, or concept you had to learn quickly for a project or task, either academic or professional? What was your approach, and what was the outcome?",
+    "category": "behavioral",
+    "purpose": "Assess adaptability, initiative in learning, and problem-solving through new knowledge acquisition."
+  },
+  {
+    "id": 6,
+    "question": "Based on your experience with SQL in projects like 'Pizza Sales Data Visualization' and at FSS, can you explain the difference between `WHERE` and `HAVING` clauses, and provide a simple scenario where you would use each in a query?",
+    "category": "technical",
+    "purpose": "Evaluate foundational SQL knowledge relevant to data querying and analysis.",
+    "focus": "SQL querying fundamentals"
+  },
+  {
+    "id": 7,
+    "question": "Your FSS experience mentions 'developed knowledge of ETL workflows' and your projects involved data cleaning. As an intern, if you received a dataset with inconsistencies, missing values, or duplicate entries, what would be your initial steps to identify these issues, and what basic techniques would you consider to clean or prepare this data for analysis?",
+    "category": "technical",
+    "purpose": "Assess understanding of basic data quality issues and foundational data cleaning processes.",
+    "focus": "Data cleaning and preparation"
+  },
+  {
+    "id": 8,
+    "question": "You've listed Power BI, Google Sheets, and Excel as data tools, and your 'Pizza Sales Data Visualization' project utilized visualization. When would you typically choose Power BI for creating a report or dashboard over, say, Google Sheets or Excel, especially when presenting insights to a non-technical audience?",
+    "category": "technical",
+    "purpose": "Evaluate understanding of data visualization tools and their appropriate use cases for an intern-level data analyst.",
+    "focus": "Data Visualization Tools"
+  },
+  {
+    "id": 9,
+    "question": "Your work experience at FSS involved 'creating data pipelines to collect, clean, and transform raw data (SQL Oracle) from various sources.' Could you walk me through a specific example of a data pipeline you worked on there, focusing on the steps you were responsible for and any particular challenges you encountered during the 'collect, clean, or transform' phases?",
+    "category": "cv_based",
+    "purpose": "Gain deeper insight into practical application of ETL concepts and problem-solving within a professional setting.",
+    "focus": "FSS Work Experience / ETL"
+  },
+  {
+    "id": 10,
+    "question": "For your 'Travel Destination Research Tracker' project, you used Python for web scraping and Airtable for organization. What was the most complex or interesting piece of data you had to scrape, or the biggest challenge you faced in structuring and organizing that scraped data in Airtable to make it useful for users?",
+    "category": "cv_based",
+    "purpose": "Understand practical application of Python for data collection and data organization skills, as well as project ownership and challenges."
+  },
+  {
+    "id": 11,
+    "question": "Imagine you're asked to analyze sales data for a new product, but you're only given two data points: the total sales revenue for the first month and the total number of units sold. As an intern data analyst, what initial questions would you ask, and what additional data would you try to acquire or infer to provide a more meaningful analysis to stakeholders?",
+    "category": "creative",
+    "purpose": "Test problem-solving, critical thinking, data intuition, and proactive information gathering under ambiguity."
+  }
+]

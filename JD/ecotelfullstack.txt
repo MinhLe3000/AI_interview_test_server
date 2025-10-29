@@ -1,0 +1,56 @@
+CÔNG TY TNHH ECOTEL
+Địa chỉ: Số 4-Q28, 136 Nguyễn An Ninh, Tương Mai, Hà Nội
+SĐT: 0378665822
+Website: https://ecotel.com.vn
+
+Email: info@ecotel.com.vn
+
+THÔNG BÁO TUYỂN DỤNG
+
+FULLSTACK DEVELOPER (THỰC TẬP SINH)
+
+MÔ TẢ CÔNG VIỆC
+
+Tham gia phát triển ứng dụng Web theo mô hình Microservices
+
+Học hỏi và hỗ trợ phân tích yêu cầu, thiết kế, lập trình và kiểm thử phần mềm.
+
+Phối hợp cùng QA, BA, DevOps để đảm bảo chất lượng sản phẩm.
+
+Tham gia nghiên cứu, tìm hiểu công nghệ mới, đóng góp ý tưởng cải thiện hiệu suất và chất lượng dự án.
+
+Hỗ trợ bảo trì, sửa lỗi và phát triển thêm tính năng theo hướng dẫn.
+
+YÊU CẦU CÔNG VIỆC
+
+Kiến thức và kỹ năng:
+
+Nắm vững cơ bản kiến thức các frameworks: Spring Boot, Flask, ASP.NET Core, Bootstrap,…
+
+Có hiểu biết hoặc từng trải nghiệm với một trong các ngôn ngữ lập trình: Flutter, ReactJS, JavaScript / TypeScript, HTML5, CSS3, Java, NodeJS, Python, .NET (C#).
+
+Hiểu khái niệm cơ bản về Cơ sở dữ liệu quan hệ (MySQL, PostgreSQL, Oracle) hoặc NoSQL.
+
+Biết sử dụng thành thạo công cụ quản lý mã nguồn: Git/GitHub/GitLab/Bitbucket.
+
+Có kiến thức nền tảng về Lập trình hướng đối tượng (OOP), Design Patterns là một lợi thế.
+
+Yêu cầu khác:
+
+Sinh viên năm cuối hoặc mới tốt nghiệp các ngành CNTT, Khoa học máy tính hoặc liên quan.
+
+Kỹ năng làm việc nhóm, tư duy logic tốt, tinh thần trách nhiệm cao.
+
+CƠ HỘI VÀ QUYỀN LỢI
+
+Chính sách hỗ trợ: Phụ cấp thực tập sinh, thưởng theo dự án.
+
+Cơ hội học hỏi thực tế: Được tham gia trực tiếp vào các dự án đa dạng.
+
+Môi trường năng động, cởi mở, đề cao sự sáng tạo và đóng góp cá nhân.
+
+Cơ hội trở thành Nhân viên chính thức nếu thực tập sinh thể hiện tốt năng lực và tinh thần làm việc.
+
+CV gửi trực tiếp về:
+📧 Email: info@ecotel.com.vn
+ / 📞 SĐT: 0868882360

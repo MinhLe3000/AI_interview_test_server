@@ -1,0 +1,126 @@
+{
+  "summary": {
+    "candidate_name": "TĐM",
+    "interview_date": "2025-10-14 08:19:27",
+    "average_overall_score": 79.55,
+    "questions_scored": 11,
+    "overall_feedback": {
+      "overall_score": 85,
+      "strengths": "Ứng viên TĐM thể hiện nền tảng kiến thức kỹ thuật vững chắc cho vị trí Thực tập sinh Phân tích Dữ liệu, đặc biệt là về SQL (bao gồm cả cú pháp Oracle cụ thể), quy trình ETL, và các công cụ trực quan hóa như Power BI. TĐM có tư duy phân tích mạnh mẽ, chú ý đến chi tiết và khả năng học hỏi nhanh, thể hiện qua việc tự rèn luyện để vượt qua khó khăn với SQL. Ứng viên cũng chứng minh kỹ năng làm việc nhóm hiệu quả và cách tiếp cận có cấu trúc khi đối mặt với dữ liệu không nhất quán hoặc thiếu sót. Kinh nghiệm thực tế ban đầu từ dự án cá nhân và công việc tại FSS cho thấy sự chủ động và khả năng áp dụng kiến thức vào các tình huống thực tế.",
+      "weaknesses": "Mặc dù TĐM có nhận thức tốt về việc cần cải thiện kỹ năng kể chuyện bằng dữ liệu và trực quan hóa để giao tiếp với các bên không chuyên, đây vẫn là một lĩnh vực quan trọng cần được phát triển thêm. Các câu trả lời về kinh nghiệm làm việc nhóm và vượt qua thử thách đôi khi còn khá ngắn gọn, có thể đi sâu hơn vào tác động cụ thể hoặc bài học kinh nghiệm sâu sắc hơn. Ngoài ra, có một điểm không nhất quán nhỏ giữa việc giới thiệu là 'recently graduated' và được hỏi với vai trò 'second-year IT student' trong buổi phỏng vấn, dù không ảnh hưởng nhiều đến đánh giá kỹ năng.",
+      "hiring_recommendation": "Rất khuyến khích"
+    }
+  },
+  "details": {
+    "1": {
+      "correctness": 9,
+      "coverage": 9,
+      "reasoning": 3,
+      "creativity": 3,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 78,
+      "feedback": "Ứng viên đã trả lời đầy đủ các phần của câu hỏi: giới thiệu bản thân, trình bày về nền tảng học vấn và lý do đến phỏng vấn. Câu trả lời rõ ràng, mạch lạc và thể hiện thái độ rất tích cực, lịch sự. Tuy nhiên, phần lý do đến phỏng vấn còn khá chung chung. Để cải thiện, ứng viên có thể bổ sung thêm chi tiết về việc kỹ năng của bản thân phù hợp với vị trí hoặc định hướng phát triển của công ty như thế nào, thay vì chỉ nói 'apply my skills and grow with your company' một cách khái quát."
+    },
+    "2": {
+      "correctness": 9,
+      "coverage": 8,
+      "reasoning": 7,
+      "creativity": 6,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 82,
+      "feedback": "Ứng viên đã đưa ra một câu trả lời mạnh mẽ và rất phù hợp với vai trò Chuyên viên phân tích dữ liệu. Các điểm mạnh được nêu (chú ý chi tiết, tư duy phân tích, chuyển đổi dữ liệu thành thông tin hữu ích) là cốt lõi cho vị trí này. Việc nhận diện và đang phát triển kỹ năng kể chuyện và trực quan hóa dữ liệu, đặc biệt là để giao tiếp với các bên liên quan không chuyên về kỹ thuật, cho thấy sự tự nhận thức và định hướng phát triển rõ ràng. Câu trả lời mạch lạc, súc tích và thể hiện thái độ tích cực, cầu tiến."
+    },
+    "3": {
+      "correctness": 8,
+      "coverage": 6,
+      "reasoning": 6,
+      "creativity": 4,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 72,
+      "feedback": "Ứng viên thể hiện sự hào hứng và mục tiêu rõ ràng, đặc biệt là mong muốn có kinh nghiệm thực tế và cải thiện kỹ năng với các công cụ cụ thể như SQL, Python và trực quan hóa dữ liệu. Cách trình bày mạch lạc và thái độ tích cực. Tuy nhiên, câu trả lời còn thiếu chiều sâu trong việc giải thích tại sao công ty này lại thu hút ứng viên một cách cụ thể (ngoài việc tập trung vào dữ liệu chung) và chưa liên kết rõ ràng với 'background ấn tượng' đã được đề cập trong câu hỏi. Ứng viên cũng có thể mở rộng hơn về những gì muốn đạt được về mặt phát triển sự nghiệp hoặc cách họ có thể đóng góp cho công ty."
+    },
+    "4": {
+      "correctness": 8,
+      "coverage": 7,
+      "reasoning": 7,
+      "creativity": 6,
+      "communication": 9,
+      "attitude": 9,
+      "overall_score": 77,
+      "feedback": "Ứng viên đã đưa ra một ví dụ cụ thể, rõ ràng về dự án nhóm và những ý tưởng khác biệt. Điểm mạnh là khả năng chủ động đề xuất giải pháp (kết hợp các phương pháp, kiểm tra kết quả) và thể hiện tư duy hướng tới mục tiêu chung, cởi mở. Tuy nhiên, phần trả lời về cách xử lý các bất đồng còn hơi chung chung. Ứng viên đã mô tả một quy trình hợp nhất ý tưởng dựa trên việc thử nghiệm và đánh giá khách quan hơn là giải quyết một 'bất đồng' cụ thể hoặc một xung đột về quan điểm. Việc bổ sung chi tiết về một tình huống bất đồng cụ thể và cách ứng viên đã đàm phán hoặc thuyết phục để đạt được sự đồng thuận sẽ giúp câu trả lời hoàn thiện hơn."
+    },
+    "5": {
+      "correctness": 9,
+      "coverage": 8,
+      "reasoning": 6,
+      "creativity": 7,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 82,
+      "feedback": "Ứng viên đã xác định rõ một thử thách cụ thể (viết truy vấn SQL phức tạp và join) và mô tả cách tiếp cận thực tế để vượt qua nó (thực hành hàng ngày, theo dõi hướng dẫn trực tuyến). Kết quả cuối cùng là hoàn thành một dự án nhỏ với những hiểu biết rõ ràng cho thấy khả năng học hỏi và áp dụng kiến thức. Thái độ rất tích cực và chủ động ('instead of getting discouraged'). Để cải thiện, ứng viên có thể đi sâu hơn một chút vào lý do tại sao phương pháp đó hiệu quả hoặc một bài học cụ thể rút ra từ trải nghiệm, thay vì chỉ mô tả hành động."
+    },
+    "6": {
+      "correctness": 9,
+      "coverage": 7,
+      "reasoning": 7,
+      "creativity": 5,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 78,
+      "feedback": "Ứng viên đã giải thích các bước cơ bản của quy trình ETL (Extract, Transform, Load) một cách chính xác và rõ ràng. Các ví dụ về nguồn dữ liệu (databases, APIs), các loại biến đổi (cleaning, filtering, joining) và đích đến (data warehouse) đều phù hợp. Tuy nhiên, phần giải thích 'tại sao mỗi bước quan trọng đối với phân tích dữ liệu' còn khá chung chung, đặc biệt là với bước Extract và Transform, thay vì đi sâu vào tầm quan trọng cụ thể của từng bước trong việc đảm bảo tính đầy đủ, chất lượng, và khả năng sử dụng của dữ liệu cho phân tích. Tổng thể, đây là một câu trả lời tốt cho cấp độ thực tập sinh."
+    },
+    "7": {
+      "correctness": 9,
+      "coverage": 10,
+      "reasoning": 9,
+      "creativity": 8,
+      "communication": 10,
+      "attitude": 10,
+      "overall_score": 90,
+      "feedback": "Ứng viên đã đưa ra một câu trả lời rất rõ ràng và mạch lạc. Các bước logic để giải quyết vấn đề đã được trình bày đầy đủ và chính xác (lọc theo quý, nhóm theo khách hàng, tính tổng chi tiêu, sắp xếp và giới hạn kết quả). Đoạn mã SQL cho Oracle được cung cấp hoàn toàn chính xác và sử dụng cú pháp hiện đại (`FETCH FIRST 5 ROWS ONLY`). Điểm cần lưu ý nhỏ là cách xác định 'last quarter' trong mệnh đề WHERE, mặc dù cú pháp `ADD_MONTHS(TRUNC(SYSDATE, 'Q'), -3)` là chính xác để lấy ngày bắt đầu quý trước, nó sẽ bao gồm cả các giao dịch từ đầu quý trước cho đến hiện tại. Nếu ý muốn là chỉ quý đã kết thúc gần nhất, cần thêm điều kiện giới hạn ngày kết thúc. Tuy nhiên, đây là một cách diễn giải hợp lý và câu trả lời thể hiện sự hiểu biết sâu sắc về SQL."
+    },
+    "8": {
+      "correctness": 9,
+      "coverage": 7,
+      "reasoning": 7,
+      "creativity": 3,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 75,
+      "feedback": "Ứng viên đã trả lời chính xác các trường hợp sử dụng Power BI thay thế Excel, đặc biệt nhấn mạnh về xử lý tập dữ liệu lớn, bảng điều khiển tương tác và cập nhật định kỳ. Các ưu điểm như làm mới dữ liệu tự động, mô hình hóa dữ liệu tốt hơn với các mối quan hệ và chia sẻ báo cáo dễ dàng cũng được nêu bật. Câu trả lời rõ ràng, mạch lạc và thể hiện sự hiểu biết về các lợi ích cốt lõi của Power BI. Tuy nhiên, ứng viên có thể cung cấp thêm chi tiết về các tính năng nâng cao khác của Power BI như DAX, khả năng kết nối đa dạng nguồn dữ liệu, bảo mật cấp hàng (RLS) hoặc các khả năng phân tích chuyên sâu hơn để cho thấy sự hiểu biết sâu sắc hơn."
+    },
+    "9": {
+      "correctness": 9,
+      "coverage": 9,
+      "reasoning": 6,
+      "creativity": 3,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 78,
+      "feedback": "Ứng viên đã xác định đúng thách thức lớn nhất trong dự án là xử lý dữ liệu không nhất quán và không đầy đủ từ nhiều nguồn, đây là một vấn đề thực tế trong web scraping. Các bước được nêu ra để đảm bảo dữ liệu sạch và nhất quán (xác thực dữ liệu, loại bỏ trùng lặp, điền giá trị thiếu, chuẩn hóa định dạng) là hoàn toàn phù hợp và chính xác, bao phủ tốt các ý chính được mong đợi. Cách trình bày rõ ràng, mạch lạc và thái độ tích cực. Tuy nhiên, câu trả lời có thể chi tiết hơn một chút về cách thức thực hiện cụ thể của từng bước (ví dụ: các quy tắc xác thực cụ thể, phương pháp điền giá trị thiếu, các loại định dạng được chuẩn hóa) để thể hiện chiều sâu hiểu biết và lập luận vững chắc hơn."
+    },
+    "10": {
+      "correctness": 10,
+      "coverage": 9,
+      "reasoning": 8,
+      "creativity": 5,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 85,
+      "feedback": "Ứng viên đã trả lời trực tiếp và rõ ràng cả hai phần của câu hỏi. Một trường hợp cụ thể về việc hỗ trợ trích xuất dữ liệu cho 'báo cáo tài chính hàng tháng' bằng cách 'viết truy vấn SQL để lấy dữ liệu giao dịch từ nhiều cơ sở dữ liệu' được mô tả rất tốt. Thử thách chính và bài học rút ra ('đảm bảo độ chính xác dữ liệu giữa các nguồn khác nhau' và 'tầm quan trọng của việc kiểm tra chéo và xác thực dữ liệu') cũng được nêu bật một cách logic. Câu trả lời thể hiện sự hiểu biết về quy trình và khả năng học hỏi từ kinh nghiệm thực tế. Để nâng cao hơn, ứng viên có thể bổ sung thêm một chút chi tiết về lý do tại sao các cơ sở dữ liệu khác nhau lại gây ra thách thức về độ chính xác (ví dụ: khác biệt về lược đồ, định dạng dữ liệu), để thể hiện chiều sâu kỹ thuật hơn."
+    },
+    "11": {
+      "correctness": 9,
+      "coverage": 7,
+      "reasoning": 8,
+      "creativity": 5,
+      "communication": 9,
+      "attitude": 10,
+      "overall_score": 78,
+      "feedback": "Ứng viên đã đưa ra một câu trả lời rất tốt và có cấu trúc rõ ràng. Các bước tiếp cận như đánh giá mức độ và kiểu dữ liệu bị thiếu, áp dụng các kỹ thuật như điền khuyết (imputation) hoặc phân tích trên các tập con đáng tin cậy đều rất phù hợp và chính xác. Điểm cộng lớn là việc nhấn mạnh tầm quan trọng của việc truyền đạt rõ ràng các hạn chế cho nhóm, thể hiện tư duy chuyên nghiệp và có trách nhiệm. Về phạm vi, câu trả lời đã bao quát được nhiều ý chính cần thiết. Để hoàn thiện hơn, ứng viên có thể chi tiết hơn một chút về các phương pháp điền khuyết cụ thể (ví dụ: trung bình, trung vị, hồi quy) hoặc đề cập đến việc chủ động thảo luận với các thành viên trong nhóm để hiểu rõ hơn nguyên nhân và bối cảnh của dữ liệu thiếu, cũng như đề xuất các câu hỏi phân tích thay thế nếu dữ liệu không đủ cho mục tiêu ban đầu."
+    }
+  }
+}

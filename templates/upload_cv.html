@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}Tạo câu hỏi phỏng vấn - Interview AI System{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="card border-0 shadow">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                    <i class="fas fa-upload me-2"></i>Tạo câu hỏi phỏng vấn từ CV
+                </h4>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                    <!-- File Upload -->
+                    <div class="mb-4">
+                        <label for="cv_file" class="form-label fw-bold">
+                            <i class="fas fa-file-pdf me-1"></i>Chọn file CV
+                        </label>
+                        <input type="file" class="form-control" id="cv_file" name="cv_file" 
+                               accept=".pdf,.png,.jpg,.jpeg,.bmp,.tiff,.tif" required>
+                        <div class="form-text">
+                            Hỗ trợ các định dạng: PDF, PNG, JPG, JPEG, BMP, TIFF (Tối đa 16MB)
+                        </div>
+                    </div>
+
+                    <!-- Job Information -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="job_title" class="form-label fw-bold">
+                                    <i class="fas fa-briefcase me-1"></i>Vị trí ứng tuyển
+                                </label>
+                                <input type="text" class="form-control" id="job_title" name="job_title" 
+                                       placeholder="VD: Data Engineer, Frontend Developer..." required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="level" class="form-label fw-bold">
+                                    <i class="fas fa-user-graduate me-1"></i>Cấp độ
+                                </label>
+                                <select class="form-select" id="level" name="level" required>
+                                    <option value="">Chọn cấp độ</option>
+                                    <option value="Intern">Intern</option>
+                                    <option value="Fresher">Fresher</option>
+                                    <option value="Junior">Junior</option>
+                                    <option value="Senior">Senior</option>
+                                    <option value="Lead">Lead</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Area -->
+                    <div class="mb-4" id="previewArea" style="display: none;">
+                        <label class="form-label fw-bold">
+                            <i class="fas fa-eye me-1"></i>Xem trước file
+                        </label>
+                        <div class="border rounded p-3 bg-light">
+                            <div id="filePreview"></div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                            <i class="fas fa-magic me-2"></i>Tạo câu hỏi phỏng vấn
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Loading State -->
+                <div class="text-center mt-4" id="loadingState" style="display: none;">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Đang xử lý...</span>
+                    </div>
+                    <p class="mt-2 text-muted">AI đang phân tích CV và tạo câu hỏi...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Card -->
+        <div class="card border-0 shadow mt-4">
+            <div class="card-body">
+                <h5 class="card-title text-primary">
+                    <i class="fas fa-info-circle me-2"></i>Thông tin về hệ thống
+                </h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-success">Tính năng chính:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Phân tích CV tự động</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Tạo câu hỏi phù hợp</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Đánh giá đa tiêu chí</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-info">Loại câu hỏi:</h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-comment text-info me-2"></i>Câu hỏi mở đầu</li>
+                            <li><i class="fas fa-users text-info me-2"></i>Câu hỏi hành vi</li>
+                            <li><i class="fas fa-code text-info me-2"></i>Câu hỏi kỹ thuật</li>
+                            <li><i class="fas fa-lightbulb text-info me-2"></i>Câu hỏi sáng tạo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const fileInput = document.getElementById('cv_file');
+    const previewArea = document.getElementById('previewArea');
+    const filePreview = document.getElementById('filePreview');
+    const form = document.getElementById('uploadForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const loadingState = document.getElementById('loadingState');
+
+    // File preview
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const fileType = file.type;
+                let previewHTML = '';
+                
+                if (fileType.startsWith('image/')) {
+                    previewHTML = `<img src="${e.target.result}" class="img-fluid" style="max-height: 200px;" alt="Preview">`;
+                } else if (fileType === 'application/pdf') {
+                    previewHTML = `<div class="text-center"><i class="fas fa-file-pdf fa-3x text-danger"></i><br><span class="text-muted">${file.name}</span></div>`;
+                }
+                
+                filePreview.innerHTML = previewHTML;
+                previewArea.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            previewArea.style.display = 'none';
+        }
+    });
+
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        submitBtn.style.display = 'none';
+        loadingState.style.display = 'block';
+    });
+});
+</script>
+{% endblock %}

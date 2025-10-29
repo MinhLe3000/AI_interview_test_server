@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}Phỏng vấn - Interview AI System{% endblock %}
+
+{% block extra_css %}
+<style>
+    .question-card {
+        transition: all 0.3s ease;
+    }
+    .question-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .progress-bar {
+        transition: width 0.3s ease;
+    }
+    .answer-textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    .category-badge {
+        font-size: 0.8em;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <!-- Interview Header -->
+        <div class="card border-0 shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                    <i class="fas fa-comments me-2"></i>Phỏng vấn tương tác
+                </h4>
+            </div>
+            <div class="card-body">
+                <!-- Progress -->
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="text-muted">Tiến độ phỏng vấn</span>
+                        <span class="text-muted" id="progressText">0/{{ questions|length }}</span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%" id="progressBar"></div>
+                    </div>
+                </div>
+
+                <!-- Candidate Info Form -->
+                <div id="candidateInfoForm">
+                    <h5 class="mb-3">
+                        <i class="fas fa-user me-2"></i>Thông tin ứng viên
+                    </h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="candidate_name" class="form-label">Họ và tên</label>
+                                <input type="text" class="form-control" id="candidate_name" placeholder="Nhập họ tên">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="candidate_id" class="form-label">ID/Mã số</label>
+                                <input type="text" class="form-control" id="candidate_id" placeholder="Nhập ID">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="startInterviewBtn">
+                        <i class="fas fa-play me-2"></i>Bắt đầu phỏng vấn
+                    </button>
+                </div>
+
+                <!-- Interview Questions -->
+                <div id="interviewQuestions" style="display: none;">
+                    <div id="questionsContainer"></div>
+                    
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn btn-success btn-lg" id="submitInterviewBtn" disabled>
+                            <i class="fas fa-check me-2"></i>Hoàn thành phỏng vấn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">
+                    <i class="fas fa-check-circle me-2"></i>Phỏng vấn hoàn thành
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                <p>Cảm ơn bạn đã hoàn thành buổi phỏng vấn!</p>
+                <p class="text-muted">Kết quả đang được AI đánh giá và sẽ có sớm nhất.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <a href="{{ url_for('results') }}" class="btn btn-primary">Xem kết quả</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+const questions = {{ questions|tojson }};
+const questionsFile = "{{ questions_file }}";
+let currentQuestionIndex = 0;
+let answers = {};
+
+document.addEventListener('DOMContentLoaded', function() {
+    const candidateInfoForm = document.getElementById('candidateInfoForm');
+    const interviewQuestions = document.getElementById('interviewQuestions');
+    const startInterviewBtn = document.getElementById('startInterviewBtn');
+    const submitInterviewBtn = document.getElementById('submitInterviewBtn');
+    const questionsContainer = document.getElementById('questionsContainer');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+
+    // Start interview
+    startInterviewBtn.addEventListener('click', function() {
+        const candidateName = document.getElementById('candidate_name').value.trim();
+        const candidateId = document.getElementById('candidate_id').value.trim();
+        
+        if (!candidateName) {
+            alert('Vui lòng nhập họ tên ứng viên');
+            return;
+        }
+        
+        candidateInfoForm.style.display = 'none';
+        interviewQuestions.style.display = 'block';
+        showQuestion(0);
+    });
+
+    // Submit interview
+    submitInterviewBtn.addEventListener('click', function() {
+        const candidateName = document.getElementById('candidate_name').value.trim();
+        const candidateId = document.getElementById('candidate_id').value.trim();
+        
+        const responses = questions.map((q, index) => ({
+            ...q,
+            response: answers[index] || ''
+        }));
+
+        const data = {
+            candidate_name: candidateName,
+            candidate_id: candidateId,
+            responses: responses
+        };
+
+        fetch('/submit_interview', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(result => {
+            if (result.success) {
+                const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                modal.show();
+            } else {
+                alert('Có lỗi xảy ra: ' + result.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Có lỗi xảy ra khi gửi kết quả');
+        });
+    });
+
+    function showQuestion(index) {
+        if (index >= questions.length) {
+            // Hiển thị thông báo hoàn thành và enable nút submit
+            questionsContainer.innerHTML = `
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                        <h5 class="text-success">Chúc mừng!</h5>
+                        <p class="text-muted">Bạn đã hoàn thành tất cả câu hỏi phỏng vấn.</p>
+                        <p class="text-muted">Hãy kiểm tra lại các câu trả lời trước khi gửi.</p>
+                    </div>
+                </div>
+            `;
+            submitInterviewBtn.disabled = false;
+            updateProgress();
+            return;
+        }
+
+        const question = questions[index];
+        const questionCard = createQuestionCard(question, index);
+        questionsContainer.innerHTML = '';
+        questionsContainer.appendChild(questionCard);
+        
+        updateProgress();
+    }
+
+    function createQuestionCard(question, index) {
+        const card = document.createElement('div');
+        card.className = 'card question-card mb-3 border-0 shadow-sm';
+        
+        const categoryColors = {
+            'opening': 'primary',
+            'behavioral': 'success',
+            'technical': 'info',
+            'cv_based': 'warning',
+            'creative': 'secondary'
+        };
+        
+        const categoryNames = {
+            'opening': 'Mở đầu',
+            'behavioral': 'Hành vi',
+            'technical': 'Kỹ thuật',
+            'cv_based': 'Dựa trên CV',
+            'creative': 'Sáng tạo'
+        };
+
+        card.innerHTML = `
+            <div class="card-header bg-light">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h6 class="mb-0">
+                        <i class="fas fa-question-circle me-2"></i>Câu hỏi ${question.id}
+                    </h6>
+                    <span class="badge bg-${categoryColors[question.category] || 'secondary'} category-badge">
+                        ${categoryNames[question.category] || question.category}
+                    </span>
+                </div>
+                ${question.purpose ? `<small class="text-muted">${question.purpose}</small>` : ''}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title mb-3">${question.question}</h5>
+                <div class="mb-3">
+                    <label for="answer_${index}" class="form-label">Câu trả lời của bạn:</label>
+                    <textarea class="form-control answer-textarea" id="answer_${index}" 
+                              placeholder="Nhập câu trả lời của bạn..." 
+                              oninput="saveAnswer(${index}, this.value)">${answers[index] || ''}</textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-outline-secondary" 
+                            onclick="previousQuestion()" ${index === 0 ? 'disabled' : ''}>
+                        <i class="fas fa-arrow-left me-1"></i>Trước
+                    </button>
+                    <button type="button" class="btn btn-primary" 
+                            onclick="nextQuestion()">
+                        ${index === questions.length - 1 ? 'Hoàn thành' : 'Tiếp theo'}
+                        <i class="fas fa-arrow-right ms-1"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        return card;
+    }
+
+    function updateProgress() {
+        const answeredCount = Object.keys(answers).length;
+        const progress = (answeredCount / questions.length) * 100;
+        progressBar.style.width = progress + '%';
+        progressText.textContent = `${answeredCount}/${questions.length}`;
+    }
+
+    // Global functions for navigation
+    window.saveAnswer = function(index, value) {
+        answers[index] = value;
+        updateProgress();
+    };
+
+    window.nextQuestion = function() {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            showQuestion(currentQuestionIndex);
+        } else if (currentQuestionIndex === questions.length - 1) {
+            // Đây là câu hỏi cuối cùng, chuyển đến màn hình hoàn thành
+            currentQuestionIndex++;
+            showQuestion(currentQuestionIndex);
+        }
+    };
+
+    window.previousQuestion = function() {
+        if (currentQuestionIndex > 0) {
+            currentQuestionIndex--;
+            showQuestion(currentQuestionIndex);
+        }
+    };
+});
+</script>
+{% endblock %}
